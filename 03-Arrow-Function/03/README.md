@@ -5,7 +5,7 @@ const square = (n) => {
   n ** 2;
 };
 
-console.log(square(7)); // *
+console.log(square(7)); // * 
 ```
 
 ```js
