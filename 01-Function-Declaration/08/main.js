@@ -17,6 +17,6 @@ function login (username,password) {
     }
 }
 
-username = prompt("Enter username")
-password = prompt("Enter password")
-login(username,password);
+// username = prompt("Enter username")
+// password = prompt("Enter password")
+login(prompt("Enter username"),prompt("Enter password"));
