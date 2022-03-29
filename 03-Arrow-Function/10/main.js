@@ -1,52 +1,35 @@
-// let day;
-// let month;
-// let year;
-
-// let leapYear = year => {
-//     if (year % 100 === 0 && year % 400 === 0) {
-//         return year = true
-//     } else if (year % 100 === 0) {
-//         return year = false
-//     } else if (year % 4 === 0) {
-//         return year = true
-//     } else {
-//         return year = false
-//     }
-// };
-
-// let monthInDays = (month,year) => {
-//     leapYear(year);
-//     if (year == true && month == 2) {
-//         month = month *  29
-//     } else if (year == false && month == 2) {
-//         month = 
-//     }
+// const calcAge = year => {
+//     let sum;
+//     for (i = year ; i = 2020 ; i++) {
+//         if (year % 4 !== 0) sum += 365;
+//         if (year % 100 !== 0) sum += 366;
+//         if (year % 400 === 0) sum += 366;
+//         else sum += 365;
+//     } return alert(`You are ${sum} days old`)
 // }
 
-// function remain(day, month, year) {
-// }
+// calcAge(prompt('birth year'))
 
-// let calc = (day, month, year) => {
-// }
+/* loop it with index starting at year, adding a year until you get to 2020
+each loop check if it's leap, true = 366 false=365 */
 
+// original not working
+// \ new
 
-let monthDays = (month,yearLeap) => {
-    let monthInDays = 0;
-    month = 2;
-    leapYear = false;
-
-    for ( i = 0 ; i < month ; i++) {
-        if (i === 2 || yearLeap) {
-            monthInDays += 29;
-        } else if (i === 2 || !yearLeap) {
-            monthInDays += 28;
-        } else if (i % 2 === 0) {
-            monthInDays += 31; 
-        } else {
-            monthInDays += 30;
-        }
+const leapYear = year => {
+    if (year % 4 === 0) {
+        return year % 100 !== 0 ? true : year % 400 === 0;
     }
-    return monthInDays
 }
 
-console.log(monthDays(2,false))
+const calcAge = year => {
+    let totalDay = 0;
+    for (let i = year ; i <= 2020 ; i++) {
+        if (leapYear(i)) {
+            totalDay += 1*366;
+        } else totalDay += 1*365;
+    }
+    return console.log(totalDay);
+}
+
+calcAge(prompt("birth year"));
